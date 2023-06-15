@@ -25,6 +25,24 @@ public class TestStudent {
             System.out.println(details[i].getregno());
             System.out.println(details[i].getaddress());
         }
+        sortStudents(details);
+    }
+    public static void sortStudents(StudentTest[] s){
+        StudentTest temp=new StudentTest();
+        for(int i=0;i<s.length-1;i++){
+            for(int j=0;j<s.length-1-i;j++){
+                if(s[j].getname().compareTo(s[j+1].getname())>0){
+                    temp=s[j];
+                    s[j]=s[j+1];
+                    s[j+1]=temp;
+                }
+            }
+        }
+        for(StudentTest t: s){
+            System.out.println(t.getname());
+            System.out.println(t.getregno());
+            System.out.println(t.getaddress());
+        }
     }
 }
 
